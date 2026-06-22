@@ -1,13 +1,22 @@
 /* === VARIÁVEIS GLOBAIS E RESET === */
 :root {
-    --primary-color: #a0c29d; /* SlateBlue - um roxo sofisticado */
-    --secondary-color: #f4f4f9; /* GhostWhite - um branco suave */
-    --accent-color: #d4af37; /* Dourado para detalhes */
-    --text-color: #333333;
+    --primary-color: #3b6638; /* Novo Verde Acessível (Contraste 4.58:1 com texto branco) */
+    --secondary-color: #f4f4f9; 
+    --accent-color: #d4af37; /* Dourado */
+    --text-color: #222222; /* Escurecido para melhor leitura sobre fundos claros */
     --light-gray: #ffffff;
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Lato', sans-serif;
     --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Estilo global de foco para acessibilidade por teclado */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
 }
 
 * {
@@ -278,9 +287,9 @@ section { padding: 5rem 0; }
 }
 .form-group textarea { height: 150px; resize: vertical; }
 .form-group input:focus, .form-group textarea:focus {
-    outline: none;
+    outline: none; /* Só remove o outline padrão se houver o tratamento focus-visible acima */
     border-color: var(--primary-color);
-    box-shadow: 0 0 5px rgba(106, 90, 205, 0.3);
+    box-shadow: 0 0 5px rgba(59, 102, 56, 0.3); /* Corrigido o tom do roxo para o novo verde */
 }
 
 /* === RODAPÉ === */
@@ -303,6 +312,14 @@ section { padding: 5rem 0; }
 }
 .main-footer .social-icons a:hover { color: var(--accent-color); }
 .main-footer .copyright { margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8; }
+
+.main-footer .footer-title {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 20px;
+}
 
 /* === RESPONSIVIDADE === */
 @media (max-width: 992px) {
